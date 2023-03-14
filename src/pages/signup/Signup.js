@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+// Custom Hook
+import { useSignup } from "../../hooks/useSignup";
+
 // Styles
 import styles from "./Signup.module.css";
 
@@ -8,8 +11,11 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
 
+  const { error, isPending, signup } = useSignup();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    signup(email, password, displayName);
   };
 
   return (
@@ -40,7 +46,13 @@ function Signup() {
           value={password}
         />
       </label>
-      <button className="btn">Sign Up</button>
+      {!isPending && <button className="btn">Sign Up</button>}
+      {isPending && (
+        <button className="btn" disabled>
+          loading
+        </button>
+      )}
+      {error && <p>{error}</p>}
     </form>
   );
 }
