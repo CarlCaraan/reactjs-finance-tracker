@@ -25,19 +25,26 @@ function Login() {
       <h2>Login</h2>
 
       <label>
-        <span>email:</span>
+        <span>Email:</span>
         <input
           type="email"
+          id="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
+          placeholder="Email Address"
+          autoComplete
+          autoFocus
+          required
         />
       </label>
       <label>
-        <span>password:</span>
+        <span>Password:</span>
         <input
           type="password"
+          id="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          required
         />
       </label>
       {!isPending && <button className="btn">Login</button>}

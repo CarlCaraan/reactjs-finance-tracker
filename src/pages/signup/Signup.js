@@ -23,27 +23,39 @@ function Signup() {
       <h2>Sign Up</h2>
 
       <label>
-        <span>display name:</span>
+        <span>Display Name:</span>
         <input
           type="text"
+          id="name"
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
+          placeholder="Display Name"
+          autoComplete
+          autoFocus
+          required
         />
       </label>
       <label>
-        <span>email:</span>
+        <span>Email:</span>
         <input
           type="email"
+          id="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
+          placeholder="Email Address"
+          autoComplete
+          autoFocus
+          required
         />
       </label>
       <label>
-        <span>password:</span>
+        <span>Password:</span>
         <input
           type="password"
+          id="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          required
         />
       </label>
       {!isPending && <button className="btn">Sign Up</button>}
