@@ -30,7 +30,7 @@ function Signup() {
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
           placeholder="Display Name"
-          autoComplete
+          autoComplete="true"
           autoFocus
           required
         />
