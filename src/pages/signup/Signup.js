@@ -43,7 +43,7 @@ function Signup() {
           onChange={(e) => setEmail(e.target.value)}
           value={email}
           placeholder="Email Address"
-          autoComplete
+          autoComplete="true"
           autoFocus
           required
         />
