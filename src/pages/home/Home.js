@@ -13,11 +13,11 @@ import { useCollection } from "../../hooks/useCollection";
 
 function Home() {
   const { user } = useAuthContext();
-  const { documents, error } = useCollection("transactions", [
-    "uid",
-    "==",
-    user.uid,
-  ]);
+  const { documents, error } = useCollection(
+    "transactions",
+    ["uid", "==", user.uid],
+    ["createdAt", "desc"]
+  );
 
   return (
     <div className={styles.container}>
