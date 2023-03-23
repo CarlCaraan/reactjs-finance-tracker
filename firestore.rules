@@ -6,8 +6,7 @@ service cloud.firestore {
       // allow read, create, delete, update;
 
       allow create: if request.auth != null; // Only allow authenticated user to create
-
-      allow read, delete: if request.auth.uid == resource.data.uid // Only allow if the user owns that resources
+      allow read, delete: if request.auth.uid == resource.data.uid; // Only allow if the user owns that resources
     }
   }
 }
